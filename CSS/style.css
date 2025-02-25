@@ -83,9 +83,6 @@ nav {
 .mega-links ul li{
     line-height: 35px;
 }
-/* .mega-links ul li a {
-    height: 100%;
-} */
 
  /* -------------------
     hero styling
@@ -135,4 +132,52 @@ nav {
 
 .btn:hover {
     background: #218838;
+}
+/* Initial state of the dropdown */
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgb(34, 34, 34);
+    display: none; /* JS controls when it's shown */
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+/* Open state triggers the slide-down and fade-in */
+.mega-menu.open {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animate the links inside, initially hidden */
+.mega-links ul li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* When the dropdown is open, show the links with staggered delays */
+.mega-menu.open .mega-links ul li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mega-menu.open .mega-links ul li:nth-child(1) {
+    transition-delay: 0.1s;
+}
+.mega-menu.open .mega-links ul li:nth-child(2) {
+    transition-delay: 0.2s;
+}
+.mega-menu.open .mega-links ul li:nth-child(3) {
+    transition-delay: 0.3s;
+}
+.mega-menu.open .mega-links ul li:nth-child(4) {
+    transition-delay: 0.4s;
 }
