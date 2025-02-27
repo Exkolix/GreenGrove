@@ -50,8 +50,8 @@ nav {
 
 /* dropdown */
 .mega-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 60px;
     left: 0;
     right: 0;
     background-color: rgb(34, 34, 34);
@@ -95,7 +95,7 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     height: 100dvh;
     object-fit: cover;
     z-index: -1;
@@ -112,34 +112,16 @@ nav {
     color: #fff;
     padding: 20px;
 }
-.hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-.hero-content p {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
-}
-.btn {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    text-decoration: none;
-    color: #fff;
-    background: #28a745;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-.btn:hover {
-    background: #218838;
-}
 
-/* Text (links) inside the menu */
+/* +++++++++++++
+    Animations
+   +++++++++++++ */
 
 /* Initial state: text hidden and shifted down */
 .mega-links ul li {
     opacity: 0;
     transform: translateY(10px);
-    /* transition: opacity 0.3s ease, transform 0.3s ease; */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Open state: text appears in sequence */
@@ -160,15 +142,9 @@ nav {
     transition-delay: 0.9s;
 }
 
-/* Closing state: (we now use instant text hide via .instant-text-hide) */
-/* (No staggered reverse needed) */
+
 
 /* Instant text hide rule */
-.mega-menu.instant-text-hide .mega-links ul li {
-    transition: none !important;
-    opacity: 0 !important;
-    transform: translateY(10px) !important;
-}
 .mega-menu.instant-text-hide .mega-links ul li {
     transition: none !important;
     opacity: 0 !important;
