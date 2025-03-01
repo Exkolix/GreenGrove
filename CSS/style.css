@@ -115,11 +115,8 @@ nav {
     padding: 20px;
 }
 
-/* +++++++++++++
-    Animations
-   +++++++++++++ */
+/* +++++++ Animations ++++++++ */
 
-/* Initial state: text hidden and shifted down */
 .mega-links ul li {
     opacity: 0;
     transform: translateY(10px);
@@ -151,7 +148,25 @@ nav {
     transition: none !important;
     opacity: 0 !important;
     transform: translateY(10px) !important;
-  }
+}
+
+  /* Special */
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+/* --------------
+    Hero Section
+ ---------------- */
+ 
 
 /* --- Mobile Styles --- */
 @media (max-width: 890px) {
@@ -185,12 +200,14 @@ nav {
         overflow-y: auto;
         transition: left 0.3s ease-out;
     }
-    
 
     .navContainer.active { 
         left: 0;
     }
-    
+    .navContainer.active ~ #overlay {
+        display: block;
+        opacity: 1;
+    }
     /* Stack nav links vertically */
     .navLink {
         flex-direction: column;
@@ -224,4 +241,3 @@ nav {
         font-size: 0.8rem;
     }
   }
-  

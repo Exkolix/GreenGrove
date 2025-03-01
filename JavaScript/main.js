@@ -1,3 +1,6 @@
+// ============
+//  Navigation 
+// ============
 const nav = document.querySelector('.navbar');
 const navItems = document.querySelectorAll('.nav-item');
 const megaMenus = document.querySelectorAll('.mega-menu, .drop-menu');
@@ -116,12 +119,44 @@ megaMenus.forEach(menu => {
 if (hamburger) {
   hamburger.addEventListener('click', () => {
     navContainer.classList.toggle('active');
+    if (navContainer.classList.contains('active')) {
+      overlay.style.display = 'block';
+      // Add a small delay before setting opacity to 1 to allow the display change to take effect
+      setTimeout(() => {
+        overlay.style.opacity = '1';
+      }, 10);
+    } else {
+      overlay.style.opacity = '0';
+      // Wait for the opacity transition to complete before hiding the overlay
+      setTimeout(() => {
+        overlay.style.display = 'none';
+      }, 300); // Match this with your CSS transition time
+    }
   });
 }
 // close sidebar
 function closeSidebar() {
   navContainer.classList.remove('active');
+  overlay.style.opacity = '0';
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 300);
 }
+// Close menu when clicking on overlay
+if (overlay) {
+  overlay.addEventListener('click', closeSidebar);
+}
+// For mobile: Toggle submenu dropdowns
+document.querySelectorAll('.mega-parent > a').forEach(item => {
+  item.addEventListener('click', function(e) {
+    // Only handle submenu toggle on mobile
+    if (window.innerWidth <= 890) {
+      e.preventDefault();
+      const megaMenu = this.nextElementSibling;
+      megaMenu.classList.toggle('open');
+    }
+  });
+});
 function closeAllDropdowns() {
   if (currentDropdown) {
     currentDropdown.classList.remove('open', 'closing', 'instant-text-hide');
@@ -150,3 +185,6 @@ mobileNavItems.forEach(item => {
     }
   });
 });
+// ===============
+//  Hero Section
+// ===============
