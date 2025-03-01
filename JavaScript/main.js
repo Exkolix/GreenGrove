@@ -118,6 +118,10 @@ if (hamburger) {
     navContainer.classList.toggle('active');
   });
 }
+// close sidebar
+function closeSidebar() {
+  navContainer.classList.remove('active');
+}
 function closeAllDropdowns() {
   if (currentDropdown) {
     currentDropdown.classList.remove('open', 'closing', 'instant-text-hide');

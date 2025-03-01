@@ -42,7 +42,7 @@ nav {
     gap: 50px;
     padding-right: 10px;
 }
-.hamburger, .hamburger-close{
+.hamburger, #hamburger-close{
     display: none;
 }
 .logo {
@@ -165,7 +165,7 @@ nav {
         cursor: pointer;
         z-index: 1000; 
     }
-    .hamburger-close {
+    #hamburger-close {
         display: block;
         background: none;
         border: none;
@@ -177,7 +177,7 @@ nav {
         position: fixed;
         top: 0;
         left: -100%; 
-        width: clamp(200px, 80vw, 500px);
+        width: clamp(200px, 80vw, 300px);
         height: 100vh;
         height: 100dvh; 
         background-color: rgb(34, 34, 34);
