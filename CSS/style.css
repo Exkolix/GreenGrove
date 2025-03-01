@@ -42,8 +42,9 @@ nav {
     gap: 50px;
     padding-right: 10px;
 }
-
-
+.hamburger, .hamburger-close{
+    display: none;
+}
 .logo {
     font-size: 24px;
     color: white;
@@ -151,3 +152,76 @@ nav {
     opacity: 0 !important;
     transform: translateY(10px) !important;
   }
+
+/* --- Mobile Styles --- */
+@media (max-width: 890px) {
+    /* Show hamburger button on mobile */
+    .hamburger {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        z-index: 1000; 
+    }
+    .hamburger-close {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1200;
+    }
+    /* Hide desktop nav links if needed, and style the nav container */
+    .navContainer {
+        position: fixed;
+        top: 0;
+        left: -100%; 
+        width: clamp(200px, 80vw, 500px);
+        height: 100vh;
+        height: 100dvh; 
+        background-color: rgb(34, 34, 34);
+        z-index: 1100;
+        overflow-y: auto;
+        transition: left 0.3s ease-out;
+    }
+    
+
+    .navContainer.active { 
+        left: 0;
+    }
+    
+    /* Stack nav links vertically */
+    .navLink {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+    
+    .navLink li {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Mobile submenu dropdown: Hide by default */
+    .navLink li .mega-menu {
+        display: none;
+        flex-direction: column;
+        padding-left: 20px;
+        transition: max-height 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+    }
+    
+    /* When toggled open, display the submenu */
+    .navLink li .mega-menu.open {
+        display: flex;
+    }
+    
+    /* Optionally, adjust links so that clicking a parent doesn’t trigger navigation immediately */
+    .navLink li.mega-parent > a::after {
+        content: ' ▼';
+        font-size: 0.8rem;
+    }
+  }
+  

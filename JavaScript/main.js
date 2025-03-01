@@ -24,7 +24,7 @@ function cancelClosing() {
 // Desktop: Handle mouseenter on nav items for dropdown logic
 function handleMouseEnter() {
   // Only execute on desktop screens
-  if (window.innerWidth <= 768) return;
+  if (window.innerWidth <= 890) return;
   
   const dropdown = this.querySelector('.mega-menu, .drop-menu');
   
@@ -53,7 +53,7 @@ function handleMouseEnter() {
 // Desktop: Handle mouse leaving the navbar to close dropdowns
 function handleNavMouseLeave(event) {
   // Only execute on desktop screens
-  if (window.innerWidth <= 768) return;
+  if (window.innerWidth <= 890) return;
   
   if (
     event.relatedTarget &&
@@ -86,13 +86,13 @@ function removeDesktopEventListeners() {
 }
 
 // Initialize event listeners based on current screen size
-if (window.innerWidth > 768) {
+if (window.innerWidth > 890) {
   addDesktopEventListeners();
 }
 
 // Listen for window resize to add or remove desktop event listeners accordingly
 window.addEventListener('resize', () => {
-  if (window.innerWidth > 768) {
+  if (window.innerWidth > 890) {
     addDesktopEventListeners();
   } else {
     removeDesktopEventListeners();
@@ -118,3 +118,31 @@ if (hamburger) {
     navContainer.classList.toggle('active');
   });
 }
+function closeAllDropdowns() {
+  if (currentDropdown) {
+    currentDropdown.classList.remove('open', 'closing', 'instant-text-hide');
+    currentDropdown.style.display = 'none';
+    currentDropdown = null;
+    setNavbarColor('rgba(34, 34, 34, 0)');
+  }
+}
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 890) {
+    addDesktopEventListeners();
+  } else {
+    removeDesktopEventListeners();
+    closeAllDropdowns(); // Close any open dropdown on mobile switch
+  }
+});
+const mobileNavItems = document.querySelectorAll('.nav-item');
+
+mobileNavItems.forEach(item => {
+  item.addEventListener('click', () => {
+    const dropdown = item.querySelector('.drop-menu');
+
+    if (dropdown) {
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+  });
+});
