@@ -89,32 +89,6 @@ nav {
     line-height: 35px;
 }
 
-/* -------------------
-    hero styling
-  -------------------- */
-.hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
-    object-fit: cover;
-    z-index: -1;
-}
-.hero-content {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    color: #fff;
-    padding: 20px;
-}
-
 /* +++++++ Animations ++++++++ */
 
 .mega-links ul li {
@@ -166,11 +140,60 @@ nav {
 /* --------------
     Hero Section
  ---------------- */
- 
+ .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    object-fit: cover;
+    z-index: -1;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    bottom: -200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    color: #fff;
+    padding: 20px;
+    padding-left: 50px;
+}
+.hero-header {
+    font-size: clamp(1.5rem, 10vw, 4.5rem);
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.hero-content p  {
+    font-size: clamp(0.6rem, 5vw, 1.5rem);
+    font-weight: 200;
+    font-style: italic;
+    text-align: left;
+    margin-bottom: 35px;
+}
+.animated-segment {
+    text-align: left;
+}
+.animated-text {
+    padding-left: 30px;
+    font-style: italic;
+}
+
+
+
 
 /* --- Mobile Styles --- */
 @media (max-width: 890px) {
-    /* Show hamburger button on mobile */
+    .navbar {
+        padding: 10px 30px;
+    }
+
+    /* hamburger button on mobile */
     .hamburger {
         display: block;
         background: none;
@@ -241,3 +264,8 @@ nav {
         font-size: 0.8rem;
     }
   }
+@media (max-width: 480px) {
+    .navbar {
+        padding: 5px 15px;
+    }
+}
