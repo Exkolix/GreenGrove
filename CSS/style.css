@@ -195,7 +195,7 @@ nav {
     background-size: cover;
     height: 100vh;
     height: 100dvh;
-    margin-top: 210px;
+    margin-top: 95px;
     display: flex;
     justify-content: center; /* Center horizontally */
     align-items: center; 
