@@ -176,32 +176,6 @@ window.addEventListener('resize', () => {
 });
 const mobileNavItems = document.querySelectorAll('.nav-item');
 
-// Progressive navbar 
-document.addEventListener('scroll', () => {
-  const navbar = document.querySelector('.navbar');
-  const scrollY = window.scrollY;
-  const maxScroll = window.innerHeight * 0.5; 
-
-  // Calculate the opacity and blur based on scroll position
-  const opacity = Math.min(scrollY / maxScroll, 0.1);
-  const blur = Math.min((scrollY / maxScroll) * 10, 10);
-
-  // Apply the styles to the navbar
-  navbar.style.backgroundColor = `rgba(34, 34, 34, ${opacity})`;
-  navbar.style.backdropFilter = `blur(${blur}px)`;
-
-  // Adjust padding for desktop screens
-  if (window.innerWidth > 890) {
-      const paddingVertical = 20 - (10 * (scrollY / maxScroll));
-      const paddingHorizontal = 60 - (30 * (scrollY / maxScroll));
-
-      // Limit padding to 0 when scrollY reaches maxScroll
-      const limitedPaddingVertical = Math.max(paddingVertical, 0);
-      const limitedPaddingHorizontal = Math.max(paddingHorizontal, 0);
-
-      navbar.style.padding = `${limitedPaddingVertical}px ${limitedPaddingHorizontal}px`;
-  }
-});
 
 
 // Progressive navbar 

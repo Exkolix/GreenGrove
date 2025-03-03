@@ -25,6 +25,19 @@ nav {
     z-index: 1100;
     transition: background-color 0.3s ease;
 }
+.logoimg {
+    height: 30px;
+    width: 30px;
+}
+.logoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    font-size: 24px;
+    color: white;
+}
 
 .navbar a {
     text-decoration: none;
@@ -43,10 +56,6 @@ nav {
 }
 .hamburger, #hamburger-close{
     display: none;
-}
-.logo {
-    font-size: 24px;
-    color: white;
 }
 
 /* dropdown */
@@ -189,16 +198,19 @@ nav {
 }
 /* ----------Why garden--------sec */
 .ReasonToGarden{
-    background-image: url(../Assets/images/istockphoto-grenngrass-woodbeside.jpg);
+    /* background-image: url(../Assets/images/istockphoto-grenngrass-woodbeside.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover; */
+    background-color: hsl(34, 57%, 70%);
+    background: linear-gradient(45deg, hsl(34, 57%, 70%), hsl(30, 46%, 50%));
     height: 100vh;
     height: 100dvh;
     margin-top: 95px;
     display: flex;
     justify-content: center; 
     align-items: center; 
+    color: hsl(hue, saturation, lightness);
 }
 
 .whyGarden {
@@ -218,8 +230,8 @@ nav {
 }
 .whyGarden p {
     font-size: clamp(0.8rem, 5vw, 2rem);
-    padding-right: min(53em,8%);
-    padding-left: min(53em,8%);
+    padding-right: min(43em,8%);
+    padding-left: min(43em,8%);
 }
 
 
