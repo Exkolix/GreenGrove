@@ -11,20 +11,19 @@ nav {
     width: 100%;
     height: 60px;
     z-index: 1000;
-}
-.navbar {
     position: sticky;
     top: 0;
-    z-index: 1100;
-    background-color: rgba(34, 34, 34, 0);
+}
+.navbar {
+    background-color: rgba(34, 34, 34, 0.15);
     backdrop-filter: blur(1px);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 60px;
     height: 100%;
-    transition: background-color 0.3s ease;
+    padding: 20px 60px;
     z-index: 1100;
+    transition: background-color 0.3s ease;
 }
 
 .navbar a {
@@ -64,7 +63,7 @@ nav {
     padding: 20px;
     z-index: -1000; 
 }
-/* Closing state: delay container’s slide-up if needed */
+/* Closing state: delay container’s slide-up  */
 .mega-menu.closing {
     transition-delay: 0s;
 }
@@ -97,7 +96,7 @@ nav {
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Open state: text appears in sequence */
+/* Open state: text animation sequence */
 .mega-menu.open .mega-links ul li {
     opacity: 1;
     transform: translateY(0);
@@ -124,7 +123,7 @@ nav {
     transform: translateY(10px) !important;
 }
 
-  /* Special */
+/* Special */
 #overlay {
     display: none;
     position: fixed;
@@ -153,7 +152,7 @@ nav {
 .hero-content {
     position: relative;
     z-index: 1;
-    bottom: -200px;
+    margin-top: 25vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -163,18 +162,21 @@ nav {
     padding: 20px;
     padding-left: 50px;
 }
-.hero-header {
+.hero-title {
     font-size: clamp(1.5rem, 10vw, 4.5rem);
     font-weight: 500;
     margin-bottom: 20px;
     text-align: left;
 }
-.hero-content p  {
-    font-size: clamp(0.6rem, 5vw, 1.5rem);
+.hero-subtitle  {
+    font-size: clamp(0.6rem, 4vw, 1.5rem);
     font-weight: 200;
     font-style: italic;
     text-align: left;
     margin-bottom: 35px;
+}
+.hero-cta{
+    text-align: left;
 }
 .animated-segment {
     text-align: left;
@@ -182,9 +184,43 @@ nav {
 .animated-text {
     padding-left: 30px;
     font-style: italic;
+    font-size: clamp(0.7rem, 1vw, 1.2rem);
+    display: inline-block;
+}
+/* ----------Why garden--------sec */
+.ReasonToGarden{
+    background-image: url(../Assets/images/istockphoto-grenngrass-woodbeside.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    height: 100dvh;
+    margin-top: 210px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
 }
 
-
+.whyGarden {
+    background-color: rgb(46, 125, 50);
+    color: #fff;
+    z-index: 2;
+    height: 80vh;
+    height: 80dvh;
+    width: 80vw;
+    text-align: center;
+    border-radius: 50px;
+}
+.whyGarden h1 {
+    padding-top: 50px;
+    font-size: clamp(1.75rem, 10vw, 5rem);
+    margin-bottom: 100px;
+}
+.whyGarden p {
+    font-size: clamp(0.8rem, 5vw, 2rem);
+    padding-right: min(53em,8%);
+    padding-left: min(53em,8%);
+}
 
 
 /* --- Mobile Styles --- */
@@ -210,6 +246,9 @@ nav {
         cursor: pointer;
         z-index: 1200;
     }
+    .hero-content {
+        margin-top: 15vh;
+    }
     /* Hide desktop nav links if needed, and style the nav container */
     .navContainer {
         position: fixed;
@@ -218,7 +257,8 @@ nav {
         width: clamp(200px, 80vw, 300px);
         height: 100vh;
         height: 100dvh; 
-        background-color: rgb(34, 34, 34);
+        background-color: rgba(34, 34, 34, 0.5);
+        backdrop-filter: blur(10px);
         z-index: 1100;
         overflow-y: auto;
         transition: left 0.3s ease-out;
@@ -262,6 +302,9 @@ nav {
     .navLink li.mega-parent > a::after {
         content: ' ▼';
         font-size: 0.8rem;
+    }
+    .ReasonToGarden {
+        margin-top: 310px;
     }
   }
 @media (max-width: 480px) {
