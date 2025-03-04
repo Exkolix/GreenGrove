@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 /* -------------------
     navigation styling
@@ -198,40 +199,30 @@ nav {
 }
 /* ----------Why garden--------sec */
 .ReasonToGarden{
-    /* background-image: url(../Assets/images/istockphoto-grenngrass-woodbeside.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
-    background-color: hsl(34, 57%, 70%);
-    background: linear-gradient(45deg, hsl(34, 57%, 70%), hsl(30, 46%, 50%));
-    height: 100vh;
-    height: 100dvh;
     margin-top: 95px;
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    color: hsl(hue, saturation, lightness);
 }
 
 .whyGarden {
-    background-color: rgb(46, 125, 50);
+    background-color:  hsl(123, 46%, 34%);
+    background: linear-gradient(45deg, hsl(123, 46%, 34%), hsl(123, 33%, 27%));
     color: #fff;
     z-index: 2;
-    height: 80vh;
-    height: 80dvh;
-    width: 80vw;
+    height: 60vh;
+    height: 60dvh;
+    height: auto;
     text-align: center;
-    border-radius: 50px;
 }
 .whyGarden h1 {
     padding: 50px;
     font-size: clamp(1.75rem, 10vw, 5rem);
-    /* margin-bottom: 100px; */
+    font-family: 'Josefin Sans', sans-serif;
 }
 .whyGarden p {
+    font-family: 'Lexend', sans-serif;
     font-size: clamp(0.8rem, 5vw, 2rem);
     padding-right: min(43em,8%);
     padding-left: min(43em,8%);
+    padding-bottom: min(43em,8%);
 }
 
 
