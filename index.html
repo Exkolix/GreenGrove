@@ -9,17 +9,22 @@
     <script src="JavaScript/main.js" defer></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div id="top"></div>
     <nav>
         <div class="navbar">
             <button class="hamburger">☰</button>
-            <!-- Logo -->
-            <a href="#top" class="logoContainer">
-                <img src="Assets\images\png&svg\GreenGorvesLogo.png" alt="GreenGroves" class="logoimg">
-                <span class="logo">GreenGroves</span>
-            </a>
+            <div class="logocontain">
+                    <!-- Logo -->
+                <a href="#top" class="logoContainer">
+                    <img src="Assets\images\png&svg\GreenGorvesLogo.png" alt="GreenGroves" class="logoimg">
+                    <span class="logo">GreenGroves</span>
+                    <div class="visitor-count" id="visitor-count"></div>
+                </a>
+            </div>
+            
             <div class="navContainer">
                 <ul class="navLink">
                     <li >
@@ -159,6 +164,128 @@
             </div>
         </div>
     </section>
+
+    <section class="plant-care-techniques" id="plantCare">
+        <div class="section-header">
+            <h1>Plant Care & Growing Techniques</h1>
+            <p>Master the art of nurturing your plants with expert tips and proven methods.</p>
+        </div>
+        <div class="technique-grid">
+            <div class="technique-card">
+                <img src="Assets/images/watering.jpg" alt="Watering Techniques">
+                <h2>Watering Techniques</h2>
+                <p>Discover the best practices to keep your plants hydrated without overwatering.</p>
+          </div>
+          <div class="technique-card">
+                <img src="Assets\images\Fertilizers.jpg" alt="Soil & Fertilizers">
+                <h2>Soil & Fertilizers</h2>
+                <p>Learn how the right soil and nutrients can boost plant growth and yield.</p>
+          </div>
+          <div class="technique-card">
+                <img src="Assets\images\pruning.jpg" alt="Pruning & Trimming">
+                <h2>Pruning & Trimming</h2>
+                <p>Essential techniques to shape your plants for healthier, fuller growth.</p>
+          </div>
+          <div class="technique-card">
+                <img src="Assets\images\companion-planting.png" alt="Companion Planting">
+                <h2>Companion Planting</h2>
+                <p>Boost plant health by pairing species that support each other’s growth.</p>
+          </div>
+        </div> 
+      </section>
+
+      <section class="pots-accessories-products" id="pots-accessories-products">
+        <div class="section-header">
+          <h1>Pots, Accessories & Product Suggestions</h1>
+          <p>Everything you need to enhance your garden's charm and functionality.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-img">
+               <img src="Assets/images/pots-containers.jpg" alt="Pots & Containers">
+            </div>
+            <div class="card-content">
+               <h2>Pots & Containers</h2>
+               <p>Explore our selection of stylish and functional pots and containers that suit every garden space and style.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+               <img src="Assets\images\Accessories.avif" alt="Accessories">
+            </div>
+            <div class="card-content">
+               <h2>Accessories</h2>
+               <p>Enhance your garden with decorative accessories and practical add-ons that bring personality and charm.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-img">
+               <img src="Assets\images\gardenTools.jpg" alt="Product Suggestions">
+            </div>
+            <div class="card-content">
+               <h2>Product Suggestions</h2>
+               <p>Discover curated recommendations for gardening products that boost both productivity and aesthetics.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <section class="contact-about" id="contact-about">
+        <div class="container">
+          <!-- Contact Us on the Left -->
+          <div class="contact-section">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further assistance, feel free to reach out!</p>
+            <form>
+              <input type="text" placeholder="Your Name" required>
+              <input type="email" placeholder="Your Email" required>
+              <textarea placeholder="Your Message" rows="4" required></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+          </div>
+          <!-- About Us on the Right -->
+          <div class="about-section">
+            <h2>About Us</h2>
+            <p>GreenGroves is dedicated to providing essential gardening information for small-scale gardens—from balconies to home gardens. Our mission is to empower you with the knowledge and resources to create your own green sanctuary.</p>
+            <p>We believe that every plant nurtured brings joy, balance, and a healthier environment.</p>
+          </div>
+        </div>
+      </section>
+      
+      <footer class="footer">
+        <div class="footer-content">
+          <!-- Quick Links -->
+          <div class="footer-links">
+            <ul>
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#whyGarden">Why Garden?</a></li>
+              <li><a href="#grow">Commonly Planted Options</a></li>
+              <li><a href="#plantCare">Plant Care & Techniques</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <!-- Social Media Icons -->
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+          <!-- Newsletter Signup -->
+          <div class="footer-newsletter">
+            <form>
+              <label for="newsletter-email">Subscribe for Updates:</label>
+              <input type="email" id="newsletter-email" placeholder="Your email">
+              <button type="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <!-- Scrolling Ticker -->
+        <div class="footer-ticker">
+          <div id="ticker-content"></div>
+        </div>
+      </footer>
+      
     <div id="overlay"></div>
 </body>
 </html>

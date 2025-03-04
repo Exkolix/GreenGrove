@@ -146,6 +146,42 @@ nav {
     transition: opacity 0.3s ease;
     opacity: 0;
 }
+/* Visitor Count styling */
+.visitor-count {
+    /* position: absolute; */
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 0.9rem;
+    z-index: 1200;
+    padding-left: 10px;
+}
+
+/* Scrolling Ticker styling */
+.ticker {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #222;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    font-size: 1rem;
+    z-index: 1100;
+}
+
+#ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 15s linear infinite;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
 /* --------------
     Hero Section
  ---------------- */
@@ -207,9 +243,6 @@ nav {
 
 
 /* ----------Why garden--------sec */
-.ReasonToGarden{
-    /* margin-top: 95px; */
-}
 .whyGarden {
     background-color:  hsl(123, 46%, 34%);
     background: linear-gradient(45deg, hsl(123, 46%, 34%), hsl(123, 33%, 27%));
@@ -297,104 +330,459 @@ nav {
     font-size: 1rem;
     color: #555;
 }
+/* tip and tech */
+.plant-care-techniques {
+    padding: 60px 20px;
+    background-color: #fff; /* or a light, neutral background */
+    background-image: url(../Assets/images/warm-bark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+  }
+  
+  .plant-care-techniques .section-header h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: hsl(123, 46%, 40%);  /* Deep green matching your theme */
+    margin-bottom: 10px;
+  }
+  
+  .plant-care-techniques .section-header p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #ffffff;
+    margin-bottom: 40px;
+  }
+  
+  .technique-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+  
+  .technique-card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .technique-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .technique-card img {
+    width: 100%;
+    height: 250px; /* Increased height for a longer appearance */
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
 
-
+  .technique-card h2 {
+    font-size: 1.5rem;
+    color: #2E7D32;
+    margin-bottom: 10px;
+  }
+  
+  .technique-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .pots-accessories-products {
+    padding: 60px 20px;
+    background-color: #f8f8f8; /* Light neutral background */
+    text-align: center;
+  }
+  
+  .pots-accessories-products .section-header h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    color: #2E7D32; /* Deep green */
+    margin-bottom: 10px;
+  }
+  
+  .pots-accessories-products .section-header p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  .card-grid {
+    display: grid;
+    gap: 20px;
+    padding: 0 20px;
+    grid-template-columns: 1fr; /* Single column by default */
+  }
+  
+  @media (min-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr; /* Two columns on tablets */
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .card-grid {
+      grid-template-columns: 1fr 1fr 1fr; /* Three columns on desktop */
+    }
+  }
+  
+  /* Card with image on the left and text on the right */
+  .card {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-img {
+    flex: 1 1 40%;
+  }
+  
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    flex: 1 1 60%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .card-content h2 {
+    font-size: 1.5rem;
+    color: #2E7D32;
+    margin-bottom: 10px;
+  }
+  
+  .card-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+  .contact-about {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .contact-about .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Contact Section (Left) */
+  .contact-about .contact-section {
+    background-color: #e8f5e9; /* Light green background */
+    color: #2E7D32; /* Dark green text */
+    padding: 40px;
+    border-radius: 8px;
+  }
+  
+  .contact-about .contact-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .contact-about .contact-section form input,
+  .contact-about .contact-section form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .contact-about .contact-section form button {
+    padding: 10px 20px;
+    background-color: #2E7D32;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-about .contact-section form button:hover {
+    background-color: #1B5E20;
+  }
+  
+  /* About Section (Right) */
+  .contact-about .about-section {
+    background-color: #2E7D32; /* Dark green background */
+    color: #e8f5e9; /* Light text */
+    padding: 40px;
+    border-radius: 8px;
+  }
+  
+  .contact-about .about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive: Stack columns on smaller screens */
+  @media (max-width: 768px) {
+    .contact-about .container {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .footer {
+    background-color: #222;
+    color: #fff;
+    padding: 40px 20px;
+    position: relative;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links ul li a:hover {
+    color: #2E7D32;
+  }
+  
+  .footer-social a {
+    margin-right: 15px;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-social a:hover {
+    color: #2E7D32;
+  }
+  
+  .footer-social img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .footer-newsletter form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .footer-newsletter label {
+    font-size: 0.9rem;
+  }
+  
+  .footer-newsletter input[type="email"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    flex: 1;
+  }
+  
+  .footer-newsletter button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2E7D32;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .footer-newsletter button:hover {
+    background-color: #1B5E20;
+  }
+  
+  /* Footer Ticker */
+  .footer-ticker {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: #111;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  
+  #ticker-content {
+    display: inline-block;
+    padding-left: 100%;
+    animation: ticker 15s linear infinite;
+  }
+  
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+    
 
 /* --- Mobile Styles --- */
 @media (max-width: 890px) {
-    .navbar {
-        padding: 10px 30px;
-    }
-
-    /* hamburger button on mobile */
-    .hamburger {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: white;
-        cursor: pointer;
-        z-index: 1000; 
-    }
-    #hamburger-close {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1200;
-    }
-    /* Hide desktop nav links and style the nav container */
-    .navContainer {
-        position: fixed;
-        top: 0;
-        left: -100%; 
-        width: clamp(200px, 80vw, 300px);
-        height: 100vh;
-        height: 100dvh; 
-        background-color: rgba(34, 34, 34, 0.5);
-        backdrop-filter: blur(10px);
-        z-index: 1100;
-        overflow-y: auto;
-        transition: left 0.3s ease-out;
-    }
-
-    .navContainer.active { 
-        left: 0;
-    }
-    .navContainer.active ~ #overlay {
-        display: block;
-        opacity: 1;
-    }
-    /* Stack nav links vertically */
-    .navLink {
-        flex-direction: column;
-        gap: 10px;
-        padding: 20px;
-    }
-    
-    .navLink li {
-        width: 100%;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    /* Mobile submenu dropdown: Hide by default */
-    .navLink li .mega-menu {
-        display: none;
-        flex-direction: column;
-        padding-left: 20px;
-        transition: max-height 0.3s ease, opacity 0.3s ease;
-        overflow: hidden;
-    }
-    
-    /* When toggled open, display the submenu */
-    .navLink li .mega-menu.open {
-        display: flex;
-    }
-    
-    /* Optionally, adjust links so that clicking a parent doesn’t trigger navigation immediately */
-    .navLink li.mega-parent > a::after {
-        content: ' ▼';
-        font-size: 0.8rem;
-    }
-    
-    /* --------Hero section---------- */
-    .hero-content {
-        text-align: center;
-        padding: 20px;
-    }
-    .hero-title {
-        text-align: center;
-    }
-    .hero-subtitle {
-        text-align: center;
-    }
-    .animated-text {
-        padding-left: 10px;
-    }
-    /* --------Reason to garden---------*/
-
+  .navbar {
+      padding: 10px 30px;
   }
+
+  /* hamburger button on mobile */
+  .hamburger {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: white;
+      cursor: pointer;
+      z-index: 1000; 
+  }
+  #hamburger-close {
+      display: block;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1200;
+  }
+  /* Hide desktop nav links and style the nav container */
+  .navContainer {
+      position: fixed;
+      top: 0;
+      left: -100%; 
+      width: clamp(200px, 80vw, 300px);
+      height: 100vh;
+      height: 100dvh; 
+      background-color: rgba(34, 34, 34, 0.5);
+      backdrop-filter: blur(10px);
+      z-index: 1100;
+      overflow-y: auto;
+      transition: left 0.3s ease-out;
+  }
+
+  .navContainer.active { 
+      left: 0;
+  }
+  .navContainer.active ~ #overlay {
+      display: block;
+      opacity: 1;
+  }
+  /* Stack nav links vertically */
+  .navLink {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+  }
+  
+  .navLink li {
+      width: 100%;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  
+  /* Mobile submenu dropdown: Reset positioning for mobile */
+  .mega-menu, .drop-menu {
+      position: static;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: 100%;
+      background-color: transparent;
+      transform: none;
+      padding: 0;
+      z-index: auto;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+      margin-top: 5px;
+      padding-left: 15px;
+      border-left: 2px solid rgba(255,255,255,0.2);
+  }
+  
+  /* When toggled open, display the submenu with animation */
+  .mega-menu.open, .drop-menu.open {
+      display: block;
+      max-height: 500px; /* Adjust based on your content */
+      opacity: 1;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  
+  /* Adjust mega-content for mobile */
+  .mega-content {
+      flex-direction: column;
+  }
+  
+  /* Adjust mega-links for mobile */
+  .mega-links {
+      width: 100%;
+      margin-bottom: 10px;
+  }
+  
+  /* Rotate dropdown indicator when open */
+  .navLink li.mega-parent > a::after {
+      content: ' ▼';
+      font-size: 0.8rem;
+      display: inline-block;
+      margin-left: 5px;
+      transition: transform 0.3s ease;
+  }
+  
+  .navLink li.mega-parent.open > a::after {
+      transform: rotate(180deg);
+  }
+  
+  /* Reset desktop-specific animations for mobile */
+  .mega-menu .mega-links ul li {
+      opacity: 1;
+      transform: none;
+      transition: none;
+  }
+  
+  .mega-menu.open .mega-links ul li {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.3s ease;
+      transition-delay: 0.1s;
+  }
+  
+  /* --------Hero section---------- */
+  .hero-content {
+      text-align: center;
+      padding: 20px;
+  }
+  .hero-title {
+      text-align: center;
+  }
+  .hero-subtitle {
+      text-align: center;
+  }
+  .animated-text {
+      padding-left: 10px;
+  }
+  /* --------Reason to garden---------*/
+}
 @media (max-width: 480px) {
     .navbar {
         padding: 5px 15px;

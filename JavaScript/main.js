@@ -220,3 +220,46 @@ document.addEventListener('DOMContentLoaded', () => {
   
   animateText();
 });
+document.addEventListener('DOMContentLoaded', function() {
+  // === Visitor Count ===
+  let count = localStorage.getItem('visitorCount');
+  if (!count) {
+    count = 1;
+  } else {
+    count = parseInt(count) + 1;
+  }
+  localStorage.setItem('visitorCount', count);
+  
+  const visitorCountEl = document.getElementById('visitor-count');
+  if (visitorCountEl) {
+    visitorCountEl.innerText = 'Visitor Count: ' + count;
+  }
+  
+  // === Scrolling Ticker ===
+  function updateTicker() {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    const timeString = now.toLocaleTimeString();
+    
+    let tickerText = `${dateString} ${timeString}`;
+    
+    // Use geolocation (if permitted) to get location data
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+          const lat = position.coords.latitude.toFixed(2);
+          const lon = position.coords.longitude.toFixed(2);
+          tickerText += ` | Location: ${lat}, ${lon}`;
+          document.getElementById('ticker-content').innerText = tickerText;
+      }, function(error) {
+          // If error occurs, simply display date and time
+          document.getElementById('ticker-content').innerText = tickerText;
+      });
+    } else {
+      document.getElementById('ticker-content').innerText = tickerText;
+    }
+  }
+  
+  updateTicker();
+  setInterval(updateTicker, 1000);
+});
+
