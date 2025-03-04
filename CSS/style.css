@@ -226,7 +226,8 @@ nav {
     font-family: 'Josefin Sans', sans-serif;
 }
 .whyGarden p {
-    font-family: 'Lexend', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 250;
     font-size: clamp(0.8rem, 5vw, 2rem);
     padding-right: min(43em,8%);
     padding-left: min(43em,8%);
