@@ -8,7 +8,7 @@ const hamburger = document.querySelector('.hamburger'); // ensure it's in your H
 const navContainer = document.querySelector('.navContainer');
 const overlay = document.querySelector('#overlay');
 
-let currentDropdown = null;       // Currently open dropdown (if any)
+let currentDropdown = null;       // Currently open dropdown 
 let closingInProgress = false;    // Indicates if a dropdown is currently closing
 let isDropdownOpen = false;       // Tracks whether any dropdown is open
 
